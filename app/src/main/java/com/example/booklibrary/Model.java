@@ -1,18 +1,21 @@
 package com.example.booklibrary;
 
-public class Model {
+import java.io.Serializable;
+
+public class Model implements Serializable {
 
     private String bookName;
     private String bookAuthors;
     private String bookPublisher;
     private String bookImage;
-    private String startDate; // New field
+    private String startDate;
     private String endDate;
 
-    // Default constructor for Firebase
+
     public Model() {
         // No-op
     }
+
 
     public Model(String bookName, String bookAuthors, String bookPublisher, String bookImage, String startDate, String endDate) {
         this.bookName = bookName;
@@ -22,6 +25,8 @@ public class Model {
         this.startDate = startDate;
         this.endDate = endDate;
     }
+
+
     public String getBookName() {
         return bookName;
     }

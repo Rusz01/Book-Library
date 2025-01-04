@@ -6,9 +6,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,23 +59,4 @@ public class MainAdapter extends RecyclerView.Adapter<ItemHolder> {
 
 
 
-
-//    public static class MainViewHolder extends RecyclerView.ViewHolder {
-//        TextView bookName, bookAuthors, bookPublisher;
-//        ImageView bookImage;
-//        Model model;
-//
-//        public void setMyBasket(Model model) {
-//            this.model = model;
-//        }
-//
-//        public MainViewHolder(@NonNull View itemView) {
-//            super(itemView);
-//
-//            bookName = itemView.findViewById(R.id.book_name);
-//            bookAuthors = itemView.findViewById(R.id.book_author);
-//            bookPublisher = itemView.findViewById(R.id.book_publisher);
-//            bookImage = itemView.findViewById(R.id.book_image);
-//        }
-//    }
 }

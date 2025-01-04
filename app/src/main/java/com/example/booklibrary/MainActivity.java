@@ -29,17 +29,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize RecyclerView
+
         recyclerView = findViewById(R.id.bookList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Initialize Firebase Database Reference
+
         databaseReference = FirebaseDatabase.getInstance().getReference("books");
 
-        // Initialize ArrayList
+
         books = new ArrayList<>();
 
-        // Load Data from Firebase
+
         fetchDataFromFirebase();
     }
 
@@ -47,20 +47,20 @@ public class MainActivity extends AppCompatActivity {
         databaseReference.addValueEventListener(new com.google.firebase.database.ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                books.clear(); // Clear the list to avoid duplication
+                books.clear();
                 for (DataSnapshot bookSnapshot : snapshot.getChildren()) {
-                    // Extract individual book data
+
                     Model model = bookSnapshot.getValue(Model.class);
                     if (model != null) {
-                        books.add(model); // Add to the list
+                        books.add(model);
                     }
                 }
 
-                // Log the size of the list to debug
+
                 String TAG = "MainActivity_debug";
                 Log.d(TAG, "Total books loaded: " + books.size());
 
-                // Notify adapter of data changes
+
                 if (adapter == null) {
                     adapter = new MainAdapter(MainActivity.this, books);
                     recyclerView.setAdapter(adapter);

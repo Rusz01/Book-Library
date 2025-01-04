@@ -2,6 +2,7 @@ package com.example.booklibrary;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -42,9 +43,9 @@ public class Basket {
         builder.setMessage(basketItems + "\nDo you want to Continue shopping?")
                 .setCancelable(false)
                 .setNegativeButton("Go to Purchase Screen", (dialog, id) -> {
-                    //  Action for 'NO' Button
-                    Toast.makeText(context.getApplicationContext(),"GO TO PURCHASES",
-                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, PurchaseActivity.class);
+                    intent.putExtra("reservedBooks", myBasket);
+                    context.startActivity(intent);
                     dialog.dismiss();
                 })
                 .setPositiveButton("Stay on the Products Page", (dialog, id) -> {

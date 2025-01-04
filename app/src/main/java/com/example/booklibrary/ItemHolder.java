@@ -68,7 +68,7 @@ public class ItemHolder extends RecyclerView.ViewHolder {
             DatePickerDialog endDatePicker = new DatePickerDialog(itemView.getContext(), (view1, year1, month1, dayOfMonth1) -> {
                 String endDate = year1 + "-" + (month1 + 1) + "-" + dayOfMonth1;
 
-                // Create a new Model instance with reservation dates
+
 
                 reservedBook.setBookName(bookName.getText().toString());
                 reservedBook.setBookAuthors(bookAuthors.getText().toString());
@@ -76,7 +76,7 @@ public class ItemHolder extends RecyclerView.ViewHolder {
                 reservedBook.setStartDate(startDate);
                 reservedBook.setEndDate(endDate);
 
-                // Add the reserved book to the basket
+
                 myBasket.addToBasket(reservedBook);
                 myBasket.showBasket();
 
@@ -90,7 +90,7 @@ public class ItemHolder extends RecyclerView.ViewHolder {
             });
 
             endDatePicker.show();
-        }, 2025, 0, 1); // Default date
+        }, 2025, 0, 1);
         datePickerDialog.setTitle("Select Start Date");
 
         datePickerDialog.setOnCancelListener(dialog -> {
