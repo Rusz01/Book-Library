@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/main">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+
+            <ImageView
+                android:id="@+id/book_image"
+                android:layout_width="120dp"
+                android:layout_height="170dp"
+                tools:srcCompat="@tools:sample/avatars"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+
+                <TextView
+                    android:id="@+id/book_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Book Title"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:id="@+id/book_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Book Author"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:id="@+id/book_publisher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Book Publisher"
+                    android:textStyle="italic|bold"
+                    android:textSize="12dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <Button
+                    android:id="@+id/book_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:text="Reserve Book"
+                    android:textSize="12dp"/>
+
+                <Button
+                    android:id="@+id/clear_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:text="Cancal Resevation"
+                    android:backgroundTint="#F24848"
+                    android:textSize="12dp"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#CCCCCC" />
+
+    </LinearLayout>

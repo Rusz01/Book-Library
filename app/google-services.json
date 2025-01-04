@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "13172281048",
+    "firebase_url": "https://library-book-85cc4-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "library-book-85cc4",
+    "storage_bucket": "library-book-85cc4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13172281048:android:c4535b6caa8f3a156ed1ad",
+        "android_client_info": {
+          "package_name": "com.example.booklibrary"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKbxq8ZCaJFiY_rW9sGOYx8uOP_e9g8M8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
