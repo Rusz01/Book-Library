@@ -18,21 +18,16 @@ public class Basket {
         this.myBasket = new ArrayList<>();
     }
 
-    private String basketItemsInString(){
-
-        String output="\n Products in the Basket";
+    private String basketItemsInString() {
+        String output = "\n Products in the Basket";
         output += "\n ---------------------------------";
-        int overallTotal=0;
-
-        for (Model eachModel : myBasket){
-
-
+        for (Model eachModel : myBasket) {
             output += "\n Book Name: " + eachModel.getBookName();
             output += "\n Author: " + eachModel.getBookAuthors();
+            output += "\n Reserved From: " + eachModel.getStartDate();
+            output += "\n Reserved Until: " + eachModel.getEndDate();
             output += "\n ---------------------------------";
         }
-
-
         return output;
     }
 

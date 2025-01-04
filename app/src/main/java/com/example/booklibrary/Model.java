@@ -6,19 +6,22 @@ public class Model {
     private String bookAuthors;
     private String bookPublisher;
     private String bookImage;
+    private String startDate; // New field
+    private String endDate;
 
     // Default constructor for Firebase
     public Model() {
         // No-op
     }
 
-    public Model(String bookName, String bookAuthors, String bookPublisher, String bookImage) {
+    public Model(String bookName, String bookAuthors, String bookPublisher, String bookImage, String startDate, String endDate) {
         this.bookName = bookName;
         this.bookAuthors = bookAuthors;
         this.bookPublisher = bookPublisher;
         this.bookImage = bookImage;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
-
     public String getBookName() {
         return bookName;
     }
@@ -49,5 +52,21 @@ public class Model {
 
     public void setBookImage(String bookImage) {
         this.bookImage = bookImage;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 }

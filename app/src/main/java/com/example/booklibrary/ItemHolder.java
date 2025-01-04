@@ -6,9 +6,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Iterator;
+import java.util.Objects;
 
 public class ItemHolder extends RecyclerView.ViewHolder {
 
@@ -62,26 +69,24 @@ public class ItemHolder extends RecyclerView.ViewHolder {
     }
 
     private void showDatePicker(Button addBook, Button clearBook) {
-
         DatePickerDialog datePickerDialog = new DatePickerDialog(itemView.getContext(), (view, year, month, dayOfMonth) -> {
             String startDate = year + "-" + (month + 1) + "-" + dayOfMonth;
 
             DatePickerDialog endDatePicker = new DatePickerDialog(itemView.getContext(), (view1, year1, month1, dayOfMonth1) -> {
                 String endDate = year1 + "-" + (month1 + 1) + "-" + dayOfMonth1;
 
-//                Model m = SelectedModel();
+                // Create a new Model instance with reservation dates
+                Model reservedBook = new Model();
+                reservedBook.setBookName(bookName.getText().toString());
+                reservedBook.setBookAuthors(bookAuthors.getText().toString());
+                reservedBook.setBookPublisher(bookPublisher.getText().toString());
+                reservedBook.setBookImage(null); // If required, set the image URL
+                reservedBook.setStartDate(startDate);
+                reservedBook.setEndDate(endDate);
 
-
-//                myBasket.addToBasket(m);
-
-//                String sDate = String.valueOf(startDate);
-//                String eDate = String.valueOf(endDate);
-
-
+                // Add the reserved book to the basket
+                myBasket.addToBasket(reservedBook);
                 myBasket.showBasket();
-
-
-
 
             }, year, month, dayOfMonth);
             endDatePicker.setTitle("Select End Date");
@@ -100,15 +105,8 @@ public class ItemHolder extends RecyclerView.ViewHolder {
             addBook.setVisibility(View.VISIBLE);
         });
         datePickerDialog.show();
-
     }
 
-//    private Model SelectedModel() {
-//        String m_name = bookName.getText().toString();
-//
-//        Model m = new Model(m_name);
-//        return m;
-//    }
 
 
 }
