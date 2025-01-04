@@ -49,9 +49,7 @@ public class Basket {
                 })
                 .setPositiveButton("Stay on the Products Page", (dialog, id) -> {
                     dialog.cancel();
-                    /* finish();
-                    Toast.makeText(getApplicationContext(),"you choose yes action for alert-box",
-                            Toast.LENGTH_SHORT).show();*/
+
                 });
         //Creating dialog box
         AlertDialog alert = builder.create();
